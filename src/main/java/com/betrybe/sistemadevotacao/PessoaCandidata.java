@@ -11,7 +11,7 @@ public class PessoaCandidata extends Pessoa {
   * @param numero Número da pessoa candidata.
   */
   public PessoaCandidata(String nome, int numero) {
-    super(nome);
+    super.nome = nome;
     this.numero = numero;
     this.votos = 0;
   }
