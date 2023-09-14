@@ -19,7 +19,7 @@ public class PessoaEleitora extends Pessoa {
   }
 
   // Setters
-  public void SetCpf(String cpf) {
+  public void setCpf(String cpf) {
     this.cpf = cpf;
   }
 
