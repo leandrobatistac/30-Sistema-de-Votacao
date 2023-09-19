@@ -42,11 +42,32 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
 
   @Override
   public void mostrarResultado() {
-    // 
+    if (cpfsComputados.isEmpty()) {
+      System.out.println("É preciso ter pelo menos um voto para mostrar o resultado.");
+    }
+
+    for (int index = 0; index < pessoasCandidatas.size(); index++) {
+      PessoaCandidata candidato = pessoasCandidatas.get(index);
+      System.out.println("Nome: " + candidato.getNome()
+          + " - " + candidato.getVotos() + " votos ( "
+          + (candidato.getVotos() * 100 / cpfsComputados.size()) + "% )"
+              + "Total de votos: " + cpfsComputados.size());
+    }
   }
 
   @Override
   public void votar(String cpfEleitor, int numeroCandidato) {
-    // 
+    if (this.cpfsComputados.contains(cpfEleitor)) {
+      System.out.println("Pessoa eleitora já votou!");
+      return;
+    }
+
+    for (PessoaCandidata pessoaCandidata : pessoasCandidatas) {
+      if (pessoaCandidata.getNumero() == numeroCandidato) {
+        pessoaCandidata.receberVoto();
+        cpfsComputados.add(cpfEleitor);
+        return;
+      }
+    }
   }
 }
