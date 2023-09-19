@@ -22,7 +22,7 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
   public void cadastrarPessoaEleitora(String nome, String cpf) {
     for (PessoaEleitora pessoaEleitora: pessoasEleitoras) {
       if (this.pessoasEleitoras.contains(cpf)) {
-        System.out.println("Número da pessoa candidata já utilizado!");
+        System.out.println("Pessoa eleitora já cadastrada!");
         return;
       }
       PessoaEleitora novoEleitor = new PessoaEleitora(nome, cpf);
