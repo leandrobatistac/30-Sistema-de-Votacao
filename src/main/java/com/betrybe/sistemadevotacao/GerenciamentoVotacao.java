@@ -25,8 +25,8 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
         System.out.println("Pessoa eleitora já cadastrada!");
         return;
       }
-      pessoasEleitoras.add(new PessoaEleitora(nome, cpf));
     }
+    pessoasEleitoras.add(new PessoaEleitora(nome, cpf));
   }
 
   @Override
@@ -36,8 +36,8 @@ public class GerenciamentoVotacao implements GerenciamentoVotacaoInterface {
         System.out.println("Número da pessoa candidata já utilizado!");
         return;
       }
-      pessoasCandidatas.add(new PessoaCandidata(nome, numeroCandidato));
     }
+    pessoasCandidatas.add(new PessoaCandidata(nome, numeroCandidato));
   }
 
   @Override
